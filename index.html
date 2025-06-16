@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Aurelia Natasia 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #ffe6f0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #ff3399;
+      font-size: 2.5em;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+
+    .love {
+      font-size: 40px;
+      color: #ff66b2;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .button {
+      background-color: #ff99cc;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      margin: 20px;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      transform: rotate(10deg) scale(1.05);
+      background-color: #ff66b2;
+    }
+
+    .hidden {
+      display: none;
+      background-color: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px;
+      border: 2px dashed pink;
+    }
+
+    img {
+      width: 300px;
+      margin: 20px auto;
+      display: block;
+      animation: rotate 10s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>I LOVE YOU SO MUCH!!!!</h1>
+  <div class="love">❤️💖💘💕💓💞</div>
+
+  <img src="https://i.pinimg.com/originals/7a/98/f1/7a98f1cfbc8b8a39e755b9921e1cb6eb.jpg" alt="Love Image"/>
+
+  <button class="button" onclick="toggleSecret()">💌 Surat Rahasia</button>
+  <div class="hidden" id="secretMessage">
+    haloo aku memang bukan yg terbaik tapi aku udh effort buat kamu, LOVE YOU SO MUCH AUREL
+  </div>
+
+  <button class="button" onclick="toggleSupport()">📨 Pesan Cinta</button>
+  <div class="hidden" id="supportMessage">
+    ꕮ ࣪ ׅ ꢁ ucapan support f gf/bf<br>
+    ㅤㅤ ..   ۫ 𝅄  ׂׅ ㅤ─────<br><br>
+    good afternoon cintaku, how are you today? is there something you want to tell me? ...<br><br>
+    (pesan lengkap seperti yang kamu tulis di atas)
+  </div>
+
+  <script>
+    function toggleSecret() {
+      var x = document.getElementById("secretMessage");
+      x.style.display = x.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleSupport() {
+      var x = document.getElementById("supportMessage");
+      x.style.display = x.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
