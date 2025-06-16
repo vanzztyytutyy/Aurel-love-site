@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Aurelia Natasia 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ffe6f0, #ffccdd);
+      color: #ff4d88;
+      overflow-x: hidden;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-top: 50px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    nav {
+      margin: 40px auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .menu-btn {
+      background: #fff0f5;
+      border: 2px dashed #ff69b4;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+      box-shadow: 0 0 10px #ff99cc;
+      position: relative;
+    }
+
+    .menu-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .menu-btn:active {
+      animation: spin 0.8s linear;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg) scale(1); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    .love {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      animation: hearts 10s linear infinite;
+    }
+
+    @keyframes hearts {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 0 -1000px;
+      }
+    }
+
+    .floating-heart {
+      position: absolute;
+      font-size: 20px;
+      color: #ff66b2;
+      animation: floatHeart 5s infinite;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-300px) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Untuk Kamu, Aurelia Natasia 💕</h1>
+
+  <nav>
+    <button class="menu-btn" onclick="rotate(this)">💌 Pesan Cinta</button>
+    <button class="menu-btn" onclick="rotate(this)">🍰 Kenangan Manis</button>
+    <button class="menu-btn" onclick="rotate(this)">📸 Foto Kita</button>
+    <button class="menu-btn" onclick="rotate(this)">🎵 Lagu Kita</button>
+  </nav>
+
+  <script>
+    function rotate(el) {
+      el.style.animation = "spin 0.8s linear";
+      setTimeout(() => {
+        el.style.animation = "";
+        showHearts(el);
+      }, 800);
+    }
+
+    function showHearts(btn) {
+      for (let i = 0; i < 5; i++) {
+        const heart = document.createElement("div");
+        heart.className = "floating-heart";
+        heart.innerText = "💖";
+        heart.style.left = (btn.offsetLeft + 40 + Math.random() * 30) + "px";
+        heart.style.top = (btn.offsetTop + 20) + "px";
+        heart.style.animationDelay = (i * 0.2) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+    }
+  </script>
+
+</body>
+</html>
